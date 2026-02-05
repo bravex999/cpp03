@@ -16,14 +16,14 @@
 int main()
 {
     std::cout << "--- TESTING CLAPTRAP ---" << std::endl;
-    ClapTrap a("Steve");
-    a.attack("Zombie");
+    ClapTrap a("Robot_1");
+    a.attack("Zombie_1");
     a.takeDamage(5);
     a.beRepaired(2);
 
     std::cout << "\n--- TESTING SCAVTRAP ---" << std::endl;
-    ScavTrap b("Alex");
-    b.attack("Creeper"); 
+    ScavTrap b("Robot_2");
+    b.attack("Zombie_2"); 
     b.takeDamage(99);    
     b.beRepaired(50);
     b.guardGate();
