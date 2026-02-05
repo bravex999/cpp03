@@ -17,16 +17,16 @@
 int main()
 {
     std::cout << "--- CLAPTRAP TEST ---" << std::endl;
-    ClapTrap clap("Clappy");
+    ClapTrap clap("Clap_Class");
     clap.attack("Target");
 
     std::cout << "\n--- SCAVTRAP TEST ---" << std::endl;
-    ScavTrap scav("Scavvy");
+    ScavTrap scav("Scav_Class");
     scav.attack("Target");
     scav.guardGate();
 
     std::cout << "\n--- FRAGTRAP TEST ---" << std::endl;
-    FragTrap frag("Fraggy");
+    FragTrap frag("Frag_Class");
     frag.attack("Target");
     frag.highFivesGuys();
     frag.takeDamage(50);
