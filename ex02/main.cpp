@@ -10,28 +10,53 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include <iostream>
 
 int main()
 {
-    std::cout << "--- CLAPTRAP TEST ---" << std::endl;
-    ClapTrap clap("Clap_Class");
-    clap.attack("Target");
+    std::cout << "\n// ClapTrap basic actions\n";
+    ClapTrap mario("Mario");
+    mario.attack("Goomba");
+    mario.takeDamage(5);
+    mario.beRepaired(3);
 
-    std::cout << "\n--- SCAVTRAP TEST ---" << std::endl;
-    ScavTrap scav("Scav_Class");
-    scav.attack("Target");
-    scav.guardGate();
+    std::cout << "\n// ScavTrap basic actions\n";
+    ScavTrap luigi("Luigi");
+    luigi.attack("Koopa");
+    luigi.takeDamage(20);
+    luigi.beRepaired(10);
+    luigi.guardGate();
 
-    std::cout << "\n--- FRAGTRAP TEST ---" << std::endl;
-    FragTrap frag("Frag_Class");
-    frag.attack("Target");
-    frag.highFivesGuys();
-    frag.takeDamage(50);
-    frag.beRepaired(20);
+    std::cout << "\n// FragTrap basic actions\n";
+    FragTrap peach("Peach");
+    peach.attack("Goomba");
+    peach.takeDamage(30);
+    peach.beRepaired(10);
+    peach.highFivesGuys();
 
-    std::cout << "\n--- DESTRUCTORS ---" << std::endl;
+    std::cout << "\n// FragTrap copy constructor\n";
+    FragTrap daisy(peach);
+    daisy.attack("Koopa Troopa");
+    daisy.highFivesGuys();
+
+    std::cout << "\n// FragTrap assignment operator\n";
+    FragTrap yoshi("Yoshi");
+    yoshi = peach;
+    yoshi.attack("Bowser Jr");
+
+    std::cout << "\n// FragTrap low energy\n";
+    for (int i = 0; i < 110; i++)
+        peach.beRepaired(1);
+    peach.attack("Bowser");
+
+    std::cout << "\n// FragTrap zero hit points\n";
+    peach.takeDamage(10000);
+    peach.attack("Boo");
+    peach.highFivesGuys();
+    peach.beRepaired(10);
+
     return 0;
 }
