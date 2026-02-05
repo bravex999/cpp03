@@ -11,21 +11,34 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include <iostream>
 
 int main()
 {
-    ClapTrap hero("Mario");
-    ClapTrap copy(hero);
-    
-    hero.attack("Goomba");
-    hero.takeDamage(5);
-    hero.beRepaired(3);
+    std::cout << "\n// basic actions\n";
+    ClapTrap mario("Mario");
+    mario.attack("Goomba");
+    mario.takeDamage(5);
+    mario.beRepaired(3);
 
+    std::cout << "\n// test copy constructor\n";
+    ClapTrap luigi(mario);
+    luigi.attack("Koopa");
+    luigi.beRepaired(1);
+
+    std::cout << "\n// test assignment operator\n";
+    ClapTrap peach("Peach");
+    peach = mario;
+    peach.attack("Bowser Jr");
+
+    std::cout << "\n// test low energy\n";
     for (int i = 0; i < 12; i++)
-        hero.attack("Bowser");
+        mario.attack("Bowser");
 
-    hero.takeDamage(100);
-    hero.beRepaired(10);
+    std::cout << "\n// test zero hit points\n";
+    mario.takeDamage(100);
+    mario.attack("Boo");
+    mario.beRepaired(10);
 
     return 0;
 }
