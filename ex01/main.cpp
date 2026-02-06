@@ -15,29 +15,29 @@
 
 int main()
 {
-    std::cout << "\n// basic actions\n";
+    std::cout << "--------basic actions----------" << std::endl;
     ScavTrap luigi("Luigi");
     luigi.attack("Goomba");
     luigi.takeDamage(20);
     luigi.beRepaired(10);
     luigi.guardGate();
 
-    std::cout << "\n// test copy constructor\n";
+    std::cout << "------test copy constructor------" << std::endl;
     ScavTrap mario(luigi);
     mario.attack("Koopa");
     mario.guardGate();
 
-    std::cout << "\n// test assignment operator\n";
+    std::cout << "---------test assignment operator----------" << std::endl;
     ScavTrap yoshi("Yoshi");
     yoshi = luigi;
     yoshi.attack("Bowser");
 
-    std::cout << "\n// test low energy\n";
+    std::cout << "-------test low energy----------------" << std::endl;
     for (int i = 0; i < 55; i++)
         luigi.attack("Koopa Troopa");
     luigi.beRepaired(1);
 
-    std::cout << "\n// test zero hit points\n";
+    std::cout << "---------test zero hit points-------------" << std::endl;
     luigi.takeDamage(1000);
     luigi.attack("Boo");
     luigi.guardGate();
