@@ -33,8 +33,12 @@ int main()
     yoshi.attack("Bowser");
 
     std::cout << "-------test low energy----------------" << std::endl;
-    for (int i = 0; i < 55; i++)
+    int i = 0;
+    while (i < 55)
+    {
         luigi.attack("Koopa Troopa");
+        i++;
+    }
     luigi.beRepaired(1);
 
     std::cout << "---------test zero hit points-------------" << std::endl;
@@ -44,3 +48,4 @@ int main()
 
     return 0;
 }
+
